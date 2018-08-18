@@ -30,32 +30,32 @@ To run the application, we need to configure certain configuration in form of a 
 
 Below are required properties
 
-###  INPUT_TOPOGRAPHY_FILE
+####  INPUT_TOPOGRAPHY_FILE
 Input Topography file in .tif format.
 
-### OUTPUT_DATA_FILE
+####  OUTPUT_DATA_FILE
 Output file location, where the results need to be stored
 
-### INCLUDE_RECORD_WITHOUT_LOCATION_NAME
+####  INCLUDE_RECORD_WITHOUT_LOCATION_NAME
 A flag to indicate whether we need to include the records for which we couldn't find the location (city, country) for given latitude/longitude.
 
-### IATA_FILE
+####  IATA_FILE
 IATA file to map city(and country code) to IATA code
 
-### IATA_SERVICE
+####  IATA_SERVICE
 IATA service rest URL
 
-### TIME_RANGE
+####  TIME_RANGE
 Time range in which random record time should be generated
 
-### WEATHER_CONDITIONS
+####  WEATHER_CONDITIONS
 Allowed weather conditions
 
-### RAIN_CONDITION
+####  RAIN_CONDITION
 climate range for rainy weather
 
-### SNOW_CONDITION
+####  SNOW_CONDITION
 climate range for snow weather
 
-### SUNNY_CONDITION
+####  SUNNY_CONDITION
 climate range for sunny weather
