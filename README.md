@@ -30,6 +30,7 @@ To run the application, we need to configure certain configuration in form of a 
 
 Below are required properties
 
+```
 ####  INPUT_TOPOGRAPHY_FILE
 Input Topography file in .tif format.
 
@@ -59,3 +60,4 @@ climate range for snow weather
 
 ####  SUNNY_CONDITION
 climate range for sunny weather
+```
