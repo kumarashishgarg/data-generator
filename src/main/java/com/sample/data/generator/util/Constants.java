@@ -7,6 +7,7 @@ package com.sample.data.generator.util;
  */
 public interface Constants {
 	public static final String INPUT_TOPOGRAPHY_FILE = "INPUT_TOPOGRAPHY_FILE";
+	public static final String PIXEL_READ_PRECISION = "PIXEL_READ_PRECISION";
 	public static final String OUTPUT_DATA_FILE = "OUTPUT_DATA_FILE";
 	public static final String INCLUDE_RECORD_WITHOUT_LOCATION_NAME="INCLUDE_RECORD_WITHOUT_LOCATION_NAME";
 	public static final String LINE_SEPARATOR = "\n";

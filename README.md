@@ -33,6 +33,8 @@ Below are required properties
 ```
 INPUT_TOPOGRAPHY_FILE - Input Topography file in .tif format.
 
+PIXEL_READ_PRECISION - Pixel precision to parse the topography file
+
 OUTPUT_DATA_FILE - Output file location, where the results need to be stored
 
 INCLUDE_RECORD_WITHOUT_LOCATION_NAME - A flag to indicate whether we need to include the records for which we couldn't find the location (city, country) for given latitude/longitude.

@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.Date;
 
 import javax.imageio.ImageIO;
 
@@ -60,6 +61,7 @@ public class WeatherDataGenerator {
 	 * @throws DataGeneratorException
 	 */
 	public static void generateData() throws DataGeneratorException {
+		System.out.println("Data Generation Starts at " + new Date());
 		ParameterValue<OverviewPolicy> policy = AbstractGridFormat.OVERVIEW_POLICY.createValue();
 		policy.setValue(OverviewPolicy.IGNORE);
 
@@ -93,9 +95,10 @@ public class WeatherDataGenerator {
 			int height = img.getHeight();
 			IATAUtil.loadCityMap();
 			DecimalFormat decimalFormat = new DecimalFormat(Constants.DOUBLE_FORMAT);
+			int pixel_precision = Integer.parseInt(ConfigReader.getProperties().getProperty(Constants.PIXEL_READ_PRECISION));
 			bufferedWriter = new BufferedWriter(new FileWriter(ConfigReader.getProperties().getProperty(Constants.OUTPUT_DATA_FILE)));
-			for (int i = 0; i < width; i++) {
-				for (int j = 0; j < height; j++) {
+			for (int i = 0; i < width; i=i+pixel_precision) {
+				for (int j = 0; j < height; j=j+pixel_precision) {
 					double[] latlon = geo(geometry, i, j);
 					double lat = latlon[0];
 					double lon = latlon[1];
@@ -123,7 +126,7 @@ public class WeatherDataGenerator {
 							+ Double.valueOf(decimalFormat.format(climate[1])) + Constants.SEPARATOR
 							+ Double.valueOf(decimalFormat.format(climate[2])) + Constants.SEPARATOR
 							+ Double.valueOf(decimalFormat.format(climate[3])) + Constants.LINE_SEPARATOR;
-					System.out.println(recordData);
+					//System.out.println(recordData);
 					bufferedWriter.write(recordData);
 				}
 			}
@@ -137,6 +140,7 @@ public class WeatherDataGenerator {
 				LOGGER.error("Exception while closing the output file", e);
 			}
 		}
+		System.out.println("Data Generation Ends at " + new Date());
 	}
 
 	/**
