@@ -24,7 +24,7 @@ Application jar can be run with the below command.
 java -jar data-generator-0.0.1.jar <config.properties>
 ```
 
-## Configuration file
+## Configuration
 
 To run the application, we need to configure certain configuration in form of a properties file. This file is the only parameter required to run this application. A sample file can be referred from the `src/main/resources` folder.
 
