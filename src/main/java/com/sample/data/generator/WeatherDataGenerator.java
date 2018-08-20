@@ -127,6 +127,8 @@ public class WeatherDataGenerator {
 							+ Double.valueOf(decimalFormat.format(climate[2])) + Constants.SEPARATOR
 							+ Double.valueOf(decimalFormat.format(climate[3])) + Constants.LINE_SEPARATOR;
 					//System.out.println(recordData);
+					// We can do it in a multithreaded way with defined number of thread, where each file write in a seperate file 
+					// One other approach could be to write in multiple file, when a file size exceeds to a configured value
 					bufferedWriter.write(recordData);
 				}
 			}
